@@ -1,0 +1,7 @@
+{
+  "name": "luisApp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
