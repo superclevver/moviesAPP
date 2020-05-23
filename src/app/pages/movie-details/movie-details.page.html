@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button text="Atrás" defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ movie.title }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+ 
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>
+        {{ movie.title }}
+      </ion-card-title>
+      <ion-card-subtitle>
+        Release date: {{ movie.release_date }}
+      </ion-card-subtitle>
+      <ion-item class="ion-no-padding" lines="none">
+        <ion-text class="ratingText">{{movie.vote_average}}/10 ({{movie.vote_count}} votes)</ion-text>
+      </ion-item>
+      <ion-item class="ion-no-padding" lines="none">
+        <rating 
+        [rate]="movie.vote_average/2"
+        readonly="true"
+        size="default">
+        </rating>
+      </ion-item>
+    </ion-card-header>
+    <ion-card-content text-center>
+      <img [src]="'https://image.tmdb.org/t/p/w500' + movie.poster_path">
+      
+      <ion-title>Overview</ion-title>
+      <ion-item lines="none">
+        <ion-text class="overview">{{ movie.overview }}</ion-text>
+      </ion-item>
+ 
+    </ion-card-content>
+  </ion-card>
+  
+</ion-content>
